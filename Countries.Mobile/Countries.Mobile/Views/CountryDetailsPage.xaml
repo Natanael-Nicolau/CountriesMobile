@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:SvgConverter="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Countries.Mobile.Views.CountryDetailsPage"
+             Title="{Binding Title}">
+
+
+    <StackLayout Padding="5">
+        <!--Flag-->
+        <SvgConverter:SvgCachedImage Aspect="Fill"  Source="{Binding Country.Flag}" CacheDuration="50" Margin="100,5" RetryCount="3" RetryDelay="600">
+        </SvgConverter:SvgCachedImage>
+        <!--Flag End-->
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Grid Margin="10,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--Name-->
+                    <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" Text="Name"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Country.Name, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Name}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Name End-->
+
+                    <!--Alpha2Code-->
+                    <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" Text="Alpha 2 Code"></Label>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Country.Alpha2Code, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Alpha2Code}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Alpha2Code End-->
+
+                    <!--Alpha3Code-->
+                    <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold" Text="Alpha 3 Code"></Label>
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding Country.Alpha3Code, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Alpha3Code}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Alpha3Code End-->
+
+                    <!--Capital-->
+                    <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" Text="Capital"></Label>
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding Country.Capital, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Capital}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Capital End-->
+
+                    <!--Region-->
+                    <Label Grid.Row="4" Grid.Column="0" FontAttributes="Bold" Text="Region"></Label>
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding Country.Region, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Region}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="4" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Region End-->
+
+                    <!--Subregion-->
+                    <Label Grid.Row="5" Grid.Column="0" FontAttributes="Bold" Text="Subregion"></Label>
+                    <Label Grid.Row="5" Grid.Column="1" Text="{Binding Country.Subregion, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.SubRegion}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="5" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Subregion End-->
+
+                    <!--Population-->
+                    <Label Grid.Row="6" Grid.Column="0" FontAttributes="Bold" Text="Population"></Label>
+                    <Label Grid.Row="6" Grid.Column="1" Text="{Binding Country.Population, StringFormat='{0:N0}', TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Population}" Value="0">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="6" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Population End-->
+
+                    <!--Demonym-->
+                    <Label Grid.Row="7" Grid.Column="0" FontAttributes="Bold" Text="Demonym"></Label>
+                    <Label Grid.Row="7" Grid.Column="1" Text="{Binding Country.Demonym}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Demonym}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="7" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Demonym End-->
+
+                    <!--Area-->
+                    <Label Grid.Row="8" Grid.Column="0" FontAttributes="Bold" Text="Area"></Label>
+                    <Label Grid.Row="8" Grid.Column="1" Text="{Binding Country.Area, StringFormat='{0:N0} km²', TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Area}" Value="0">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="8" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Area End-->
+
+                    <!--Gini-->
+                    <Label Grid.Row="9" Grid.Column="0" FontAttributes="Bold" Text="Gini"></Label>
+                    <Label Grid.Row="9" Grid.Column="1" Text="{Binding Country.Gini, StringFormat='{N}', TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Gini}" Value="0">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="9" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Gini End-->
+
+                    <!--Native Name-->
+                    <Label Grid.Row="10" Grid.Column="0" FontAttributes="Bold" Text="Native Name"></Label>
+                    <Label Grid.Row="10" Grid.Column="1" HorizontalOptions="Start" Text="{Binding Country.NativeName, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.NativeName}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="10" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Native Name End-->
+
+                    <!--Numeric Code-->
+                    <Label Grid.Row="11" Grid.Column="0" FontAttributes="Bold" Text="Numeric Code"></Label>
+                    <Label Grid.Row="11" Grid.Column="1" Text="{Binding Country.NumericCode, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.NumericCode}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="11" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Numeric Code End-->
+
+                    <!--Cioc-->
+                    <Label Grid.Row="12" Grid.Column="0" FontAttributes="Bold" Text="Cioc"></Label>
+                    <Label Grid.Row="12" Grid.Column="1" Text="{Binding Country.Cioc, TargetNullValue='N/A'}">
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Style.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Country.Cioc}" Value="">
+                                        <Setter Property="Text" Value="N/A"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" Grid.Row="12" Grid.ColumnSpan="2" VerticalOptions="End"></BoxView>
+                    <!--Cioc End-->
+                </Grid>
+
+                <Label FontSize="Medium" FontAttributes="Bold" Text="Borders"></Label>
+                <!--Borders Template-->
+                <CollectionView ItemsSource="{Binding Borders}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectCountryCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <SvgConverter:SvgCachedImage Grid.Column="0"
+                                                    Aspect="Fill"
+                                                    HeightRequest="60"
+                                                    Source="{Binding Flag}"
+                                                    CacheDuration="50"
+                                                    Margin="5"
+                                                    RetryCount="3"
+                                                    RetryDelay="600"
+                                                    WidthRequest="100" />
+                                <StackLayout Grid.Column="1"
+                                     VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Region}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                                </StackLayout>
+                                <Image Grid.Column="2"
+                               Source="ic_more_vert" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!--Borders Template End-->
+            </StackLayout>
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>

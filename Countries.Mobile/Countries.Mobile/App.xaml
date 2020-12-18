@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="Countries.Mobile.App">
+  <Application.Resources>
+
+    <!-- Application resource dictionary -->
+    <ResourceDictionary>
+      <x:String x:Key="UrlAPI">https://restcountries.eu/</x:String>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Color.Green" />
+                <Setter Property="BarTextColor" Value="Color.White" />
+            </Style>
+        </ResourceDictionary>
+      
+  </Application.Resources>
+</prism:PrismApplication>
